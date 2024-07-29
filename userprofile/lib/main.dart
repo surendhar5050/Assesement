@@ -19,7 +19,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final GetUsers getUsers;
+  final GetUsers ?getUsers;
 
   MyApp({required this.getUsers});
 
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       fontFamily: GoogleFonts.inter().fontFamily
       ),
       home: BlocProvider(
-        create: (context) => UserBloc(getUsers),
+        create: (context) => UserBloc(getUsers!),
         child: UserListPage(),
       ),
     );
